@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40D562682B6F290100106271 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D562672B6F290100106271 /* main.swift */; };
+		40D562712B6F2A2D00106271 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 40D562702B6F2A2D00106271 /* ArgumentParser */; };
+		40D562732B6F2A2D00106271 /* generate-manual in Frameworks */ = {isa = PBXBuildFile; productRef = 40D562722B6F2A2D00106271 /* generate-manual */; };
+		40D562752B6F2B1C00106271 /* Exif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D562742B6F2B1C00106271 /* Exif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,10 @@
 
 /* Begin PBXFileReference section */
 		40D562642B6F290100106271 /* exif */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = exif; sourceTree = BUILT_PRODUCTS_DIR; };
-		40D562672B6F290100106271 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		40D5626E2B6F295000106271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D562742B6F2B1C00106271 /* Exif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exif.swift; sourceTree = "<group>"; };
+		40D562772B6F2D8A00106271 /* IMG_5514.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_5514.jpeg; path = ../../IMG_5514.jpeg; sourceTree = SOURCE_ROOT; };
+		40D562782B6F35AD00106271 /* exif.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = exif.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D562712B6F2A2D00106271 /* ArgumentParser in Frameworks */,
+				40D562732B6F2A2D00106271 /* generate-manual in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +48,8 @@
 		40D5625B2B6F290100106271 = {
 			isa = PBXGroup;
 			children = (
+				40D5626E2B6F295000106271 /* Info.plist */,
+				40D562762B6F2D4C00106271 /* Fixture Data */,
 				40D562662B6F290100106271 /* exif */,
 				40D562652B6F290100106271 /* Products */,
 			);
@@ -57,9 +66,18 @@
 		40D562662B6F290100106271 /* exif */ = {
 			isa = PBXGroup;
 			children = (
-				40D562672B6F290100106271 /* main.swift */,
+				40D562782B6F35AD00106271 /* exif.entitlements */,
+				40D562742B6F2B1C00106271 /* Exif.swift */,
 			);
 			path = exif;
+			sourceTree = "<group>";
+		};
+		40D562762B6F2D4C00106271 /* Fixture Data */ = {
+			isa = PBXGroup;
+			children = (
+				40D562772B6F2D8A00106271 /* IMG_5514.jpeg */,
+			);
+			path = "Fixture Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +96,10 @@
 			dependencies = (
 			);
 			name = exif;
+			packageProductDependencies = (
+				40D562702B6F2A2D00106271 /* ArgumentParser */,
+				40D562722B6F2A2D00106271 /* generate-manual */,
+			);
 			productName = exif;
 			productReference = 40D562642B6F290100106271 /* exif */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 40D5625B2B6F290100106271;
+			packageReferences = (
+				40D5626F2B6F2A2D00106271 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 40D562652B6F290100106271 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D562682B6F290100106271 /* main.swift in Sources */,
+				40D562752B6F2B1C00106271 /* Exif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +273,14 @@
 		40D5626C2B6F290100106271 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = exif/exif.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79U6T8384P;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.eigenstate.exif;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -257,7 +289,14 @@
 		40D5626D2B6F290100106271 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = exif/exif.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79U6T8384P;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.eigenstate.exif;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -285,6 +324,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40D5626F2B6F2A2D00106271 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40D562702B6F2A2D00106271 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40D5626F2B6F2A2D00106271 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		40D562722B6F2A2D00106271 /* generate-manual */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40D5626F2B6F2A2D00106271 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = "generate-manual";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40D5625C2B6F290100106271 /* Project object */;
 }
