@@ -32,6 +32,6 @@ struct Exif : ParsableCommand {
     }
 }
 
-extension String : Error {
+extension String : @retroactive Error {
     
 }
